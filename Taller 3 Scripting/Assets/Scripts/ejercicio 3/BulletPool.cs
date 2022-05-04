@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class BulletPool : MonoBehaviour
+public abstract class BulletPool : MonoBehaviour
 {
     private static BulletPool instance;
-    public static BulletPool Instance
+     public static BulletPool Instance
     {
         get
         {           
@@ -15,11 +15,41 @@ public class BulletPool : MonoBehaviour
     }
 
     [SerializeField]
-    private Rigidbody bulletPrefab;
+    private Rigidbody bullet;
 
+    public static Rigidbody Bullet
+    {
+        get
+        {
+            return instance.bullet;
+        }
+    }
+
+    [SerializeField]
+    private Rigidbody bullet2;
+
+    public static Rigidbody Bullet2
+    {
+        get
+        {
+            return instance.bullet2;
+        }
+    }
+    [SerializeField]
+    private Rigidbody bullet3;
+
+    public static Rigidbody Bullet3
+    {
+        get
+        {
+            return instance.bullet3;
+        }
+    }
     [SerializeField]
     private int Size;
     private List<Rigidbody> bullets;
+    private List<Rigidbody> bullets2;
+    private List<Rigidbody> bullets3;    
 
     private void Awake()
     {
@@ -43,9 +73,9 @@ public class BulletPool : MonoBehaviour
     public Rigidbody GetBullet()
     {
         if (bullets.Count == 0)       
-            AddBullet();           
-            return AllocateBullet();
-        
+            AddBullet();     
+            
+            return AllocateBullet();       
     }
     public void ReleaseBullet (Rigidbody bullet)
     {
@@ -54,7 +84,7 @@ public class BulletPool : MonoBehaviour
     }
     private void AddBullet()
     {
-        Rigidbody instance = Instantiate(bulletPrefab);
+        Rigidbody instance = Instantiate(bullet);
         instance.gameObject.SetActive(false);
         bullets.Add(instance);
     }
@@ -66,7 +96,4 @@ public class BulletPool : MonoBehaviour
         bullet.gameObject.SetActive(true);
         return bullet;
     }
-    
-    
-
 }
