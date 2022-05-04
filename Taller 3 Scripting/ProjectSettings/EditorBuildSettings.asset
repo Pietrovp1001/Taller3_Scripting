@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scripts/ejercicio 3/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Ejercicio 1.unity
+    path: Assets/Scripts/ejercicio 3/Scenes/Ejercicio 1.unity
     guid: e7c1c6ef8c01bee46b5e6ffca222ad9b
   - enabled: 1
-    path: Assets/Scenes/Ejercicio 2.unity
+    path: Assets/Scripts/ejercicio 3/Scenes/Ejercicio 2.unity
     guid: 7d04c4bfa7a0aad4fae21176e2ec893f
   - enabled: 1
-    path: Assets/Scenes/Ejercicio 3.unity
+    path: Assets/Scripts/ejercicio 3/Scenes/Ejercicio 3.unity
     guid: d0430eb3e1b61854e82078b5eb56b894
   m_configObjects: {}
